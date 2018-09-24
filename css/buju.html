@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>buju</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .C {
+      height: 300px;
+      margin-bottom: 10px;
+    }
+
+    .rightdk {
+      width: 200px;
+      height: 300px;
+      background: green;
+    }
+
+    .leftdk {
+      width: 200px;
+      height: 300px;
+      background: blue;
+    }
+
+    .right {
+      height: 300px;
+      background: green;
+    }
+
+    .left {
+      height: 300px;
+      background: blue;
+    }
+
+    .sbcontainer {
+      margin: 0 auto;
+      height: 600px;
+      background-color: #d2d2d2;
+      padding: 0 200px;
+    }
+
+    .sbmain {
+      width: 100%;
+      height: 600px;
+      background-color: brown;
+      margin: 0 auto;
+      float: left;
+    }
+
+    .sbleft {
+      width: 200px;
+      height: 600px;
+      background-color: cornflowerblue;
+      float: left;
+      margin-left: -100%;
+      position: relative;
+      left: -200px;
+    }
+
+    .sbright {
+      width: 200px;
+      height: 600px;
+      background-color: rgb(180, 130, 3);
+      float: left;
+      margin-left: -200px;
+      position: relative;
+      right: -200px;
+    }
+
+    .sfycontainer {
+      background: #888;
+      height: 600px;
+    }
+
+    .sfymain {
+      float: left;
+      width: 100%
+    }
+
+    .sfymaincontent {
+      background: yellow;
+      height: 600px;
+      margin: 0 200px;
+    }
+
+    .sfyleft {
+      width: 200px;
+      height: 600px;
+      float: left;
+      background: red;
+      margin-left: -100%;
+    }
+
+    .sfyright {
+      width: 200px;
+      height: 600px;
+      float: left;
+      background: green;
+      margin-left: -200px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 两列布局 -->
+  <!-- 左列定宽，右列自适应 -->
+  <div class="C">
+    <div class="leftdk" style="float: left"></div>
+    <div class="right" style="margin-left: 200px"></div>
+  </div>
+
+  <div class="C">
+    <div class="leftdk" style="float: left"></div>
+    <div class="right" style="overflow: hidden;"></div>
+  </div>
+
+  <div class="C" style="display: flex">
+    <div class="leftdk" style="float: left"></div>
+    <div class="right" style="flex: 1"></div>
+  </div>
+
+  <!-- 左列自适应，右列定宽 -->
+  <div class="C" style="padding-left: 200px">
+    <div class="left" style="margin-left: -200px;float: left; width: 100%;"></div>
+    <div class="rightdk" style="float: right;"></div>
+  </div>
+
+  <div class="C">
+    <div class="rightdk" style="float: right;"></div>
+    <div class="left" style="overflow: hidden;"></div>
+  </div>
+
+  <div class="C" style="display: flex">
+    <div class="left" style="flex: 1"></div>
+    <div class="rightdk" style="float: right"></div>
+  </div>
+
+  <!-- 三列布局 -->
+
+  <!-- 圣杯 -->
+  <div class="sbcontainer">
+    <div class="sbmain">main</div>
+    <div class="sbleft">left</div>
+    <div class="sbright">right</div>
+  </div>
+  <!-- 双飞翼 -->
+  <div class="sfycontainer">
+    <div class="sfymain">
+      <div class="sfymaincontent">main</div>
+    </div>
+    <div class="sfyleft">left</div>
+    <div class="sfyright">right</div>
+  </div>
+</body>
+
+</html>

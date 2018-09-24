@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>juzhong</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .C {
+      width: 300px;
+      height: 300px;
+      border: 1px solid blue;
+      float: left;
+      margin: 10px;
+    }
+
+    .flex-sp {
+      display: flex;
+      justify-content: center;
+    }
+
+    .flex-cz {
+      display: flex;
+      align-items: center;
+    }
+
+    .dkg {
+      width: 100px;
+      height: 100px;
+      border: 1px solid red;
+    }
+
+    .spdkg1 {
+      margin: 0 auto;
+    }
+
+    .czdkg1 {
+      margin-top: -50px;
+      position: absolute;
+      top: 50%;
+    }
+
+    .czdkg2 {
+      transform: translateY(-50%);
+      position: absolute;
+      top: 50%;
+    }
+
+    .spczdkg1 {
+      position: absolute;
+      margin-top: -50px;
+      margin-left: -50px;
+      top: 50%;
+      left: 50%;
+    }
+
+    .spcz1 {
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      position: absolute
+    }
+
+    .spcz2 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%)
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 水平居中 -->
+  <!-- inline-* 元素可以通过块级父容器设置text-align: center实现水平居中 -->
+  <!-- 定宽高 -->
+  <div class="C">
+    <div class="dkg spdkg1">
+      margin: 0 auto
+    </div>
+  </div>
+
+  <!-- 不定宽高 -->
+  <div class="C flex-sp">
+    <div class="dkg">
+      flex布局 justify-content: center
+    </div>
+  </div>
+
+  <div class="C" style="text-align: center">
+    <div class="dkg" style="display: inline-block">
+      设置居中元素为inline-block，通过父级元素设置text-align: center
+    </div>
+  </div>
+
+  <!-- 垂直居中 -->
+  <!-- 内联：设置内联元素的高度(height)和行高(line-height)相等 -->
+  <!-- 定宽高 -->
+  <div class="C" style="position: relative;">
+    <div class="dkg czdkg1">
+      通过绝对定位元素距离顶部50%，并设置margin-top向上偏移元素高度的一半。
+    </div>
+  </div>
+
+  <!-- 不定宽高 -->
+  <div class="C flex-cz">
+    <div class="dkg">
+      flex布局 align-items: center
+    </div>
+  </div>
+
+  <div class="C" style="position: relative;">
+    <div class="dkg czdkg2">
+      可以借助CSS3中的transform属性向Y轴反向偏移50%的方法实现垂直居中。但是部分浏览器存在兼容性的问题。
+    </div>
+  </div>
+
+  <!-- 水平垂直居中 -->
+  <!-- 定宽高 -->
+  <div class="C" style="position: relative;">
+    <div class="dkg spczdkg1">
+      通过margin平移元素整体宽度的一半，使元素水平垂直居中。
+    </div>
+  </div>
+
+  <div class="C" style="position: relative;">
+    <div class="dkg spcz1">
+      通过绝对定位四个方向设置为0，并设置margin: auto
+    </div>
+  </div>
+
+  <!-- 不定宽高 -->
+  <div class="C flex-cz flex-sp">
+    <div class="dkg">
+      flex布局
+    </div>
+  </div>
+
+  <div class="C" style="position: relative;">
+    <div class="dkg spcz2">
+      利用2D变换，在水平和垂直两个方向都向反向平移宽高的一半，从而使元素水平垂直居中。
+    </div>
+  </div>
+</body>
+
+</html>

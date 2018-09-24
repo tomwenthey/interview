@@ -1,0 +1,80 @@
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script>
+    window.onload = function () {
+      var btns = document.getElementById("btns");
+      var btnNew = document.getElementById("btnNew");
+      count = 1;
+      btnNew.addEventListener("click", function () {
+        var tmp = document.createElement("button");
+        tmp.innerHTML = 'Button' + (count++);
+        btns.appendChild(tmp);
+      })
+
+      var node = document.getElementById("div1");
+
+      var a = document.createAttribute("placeholder");
+      a.value = "newVal";
+      node.setAttributeNode(a);
+      console.log(node.getAttribute("my_attrib"));
+    }
+  </script>
+</head>
+
+<body>
+  <input id="div1"></div>
+  <div id="btns"></div>
+  <button id="btnNew">ButtonNew</button>
+</body>
+
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <script>
+    function getSuggestWords(str) {
+      let arr = ['a', 'b', 'c'];
+      let res = [];
+      return new Promise(function (resolve, reject) {
+        arr.forEach(function (item) {
+          if (item.indexOf(str) != -1) {
+            res.push(item);
+          }
+        })
+        resolve(res);
+      });
+    }
+
+    let showDiv = document.getElementById("showWords");
+    document.getElementById("search").addEventListener("click", function () {
+      let str = document.getElementById("keyInput").value;
+      getSuggestWords(str).then(function (res) {
+        res.forEach(function (item) {
+          var resItem = document.createElement("p");
+          resItem.innerHTML = item;
+          showDiv.appendChild(resItem);
+        })
+      })
+    });
+  </script>
+</head>
+
+<body>
+  <input type="text" id="keyinput">
+  <button id="search">搜索</button>
+  <div id="showWords"></div>
+</body>
+
+</html>
