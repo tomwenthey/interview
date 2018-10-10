@@ -33,8 +33,7 @@
 
 </html> -->
 
-
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 
 <head>
@@ -43,38 +42,26 @@
   <title>Page Title</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-  <script>
-    function getSuggestWords(str) {
-      let arr = ['a', 'b', 'c'];
-      let res = [];
-      return new Promise(function (resolve, reject) {
-        arr.forEach(function (item) {
-          if (item.indexOf(str) != -1) {
-            res.push(item);
-          }
-        })
-        resolve(res);
-      });
+  <script src="main.js"></script>
+  <style>
+    .marginTest {
+      margin: 10px;
+      width: 100px;
+      height: 100px;
+      background: red;
+      float: left
     }
-
-    let showDiv = document.getElementById("showWords");
-    document.getElementById("search").addEventListener("click", function () {
-      let str = document.getElementById("keyInput").value;
-      getSuggestWords(str).then(function (res) {
-        res.forEach(function (item) {
-          var resItem = document.createElement("p");
-          resItem.innerHTML = item;
-          showDiv.appendChild(resItem);
-        })
-      })
-    });
-  </script>
+  </style>
 </head>
 
 <body>
-  <input type="text" id="keyinput">
-  <button id="search">搜索</button>
-  <div id="showWords"></div>
+  <div class="marginTest">test</div>
+  <div class="marginTest">test</div>
+  <div class="marginTest">test</div>
+  <div class="marginTest">test</div>
+  <div class="marginTest">test</div>
+  <div class="marginTest">test</div>
+  <div class="marginTest">test</div>
 </body>
 
-</html>
+</html> -->
