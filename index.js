@@ -65,16 +65,28 @@
 // console.log(getMaxProfit([10, 2, 12, 7, 8, 9]));
 
 //let url = readline();
-function getQuery(url) {
-  let obj = {};
-  let x = url.split("?");
-  let arr = x[1].split("&");
-  let tmp;
-  for (let i = 0; i < arr.length; i++) {
-    tmp = arr[i].split("=");
-    obj[tmp[0]] = tmp[1];
+// function getQuery(url) {
+//   let obj = {};
+//   let x = url.split("?");
+//   let arr = x[1].split("&");
+//   let tmp;
+//   for (let i = 0; i < arr.length; i++) {
+//     tmp = arr[i].split("=");
+//     obj[tmp[0]] = tmp[1];
+//   }
+//   console.log(JSON.stringify(obj));
+// }
+// //getQuery(url)
+// getQuery("https://www.baidu.com?key1=value&key2=chine&key3=a");
+
+let arr = [{ a: 1, b: 1 }, { a: 6, b: 2 }, { a: 22, b: 1 }, { a: 7, b: 4 }];
+
+console.log(arr);
+arr.sort((be, af) => {
+  if (be.b !== af.b) {
+    return be.b - af.b;
+  } else {
+    return af.a - be.a;
   }
-  console.log(JSON.stringify(obj));
-}
-//getQuery(url)
-getQuery("https://www.baidu.com?key1=value&key2=chine&key3=a");
+});
+console.log(arr);

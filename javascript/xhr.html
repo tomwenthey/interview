@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    var XHR = new XMLHttpRequest();
+    XHR.open("get", "http://localhost:4000/users", true);
+    XHR.onreadystatechange = function () {
+      if (XHR.readyState === 4) {
+        if ((XHR.status >= 200 && XHR.status < 300) || XHR.status === 304) {
+          console.log(XHR.responseText);
+        }
+      }
+    }
+    XHR.send();
+    console.log("start");
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
