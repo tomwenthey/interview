@@ -79,14 +79,47 @@
 // //getQuery(url)
 // getQuery("https://www.baidu.com?key1=value&key2=chine&key3=a");
 
-let arr = [{ a: 1, b: 1 }, { a: 6, b: 2 }, { a: 22, b: 1 }, { a: 7, b: 4 }];
+// let arr = [{ a: 1, b: 1 }, { a: 6, b: 2 }, { a: 22, b: 1 }, { a: 7, b: 4 }];
 
-console.log(arr);
-arr.sort((be, af) => {
-  if (be.b !== af.b) {
-    return be.b - af.b;
-  } else {
-    return af.a - be.a;
+// console.log(arr);
+// arr.sort((be, af) => {
+//   if (be.b !== af.b) {
+//     return be.b - af.b;
+//   } else {
+//     return af.a - be.a;
+//   }
+// });
+// console.log(arr);
+
+/**
+ * @param {character[]} chars
+ * @return {number}
+ */
+var compress = function(chars) {
+  let count = 0,
+    i = 0;
+  let before = "";
+  while (i < chars.length) {
+    if (count === 0) {
+      before = chars[i];
+      count++;
+      i++;
+    } else {
+      if (chars[i] === before) {
+        count++;
+        chars.splice(i, 1);
+      } else {
+        if (count !== 1) {
+          let tmp = Array.from(count.toString());
+          chars.splice(i, 0, ...tmp);
+          i += tmp.length;
+        }
+        count = 0;
+      }
+    }
   }
-});
-console.log(arr);
+  count !== 1 ? chars.splice(i, 0, ...Array.from(count.toString())) : null;
+  return chars.length;
+};
+
+console.log(compress(["a"]));
